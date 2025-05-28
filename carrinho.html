@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Urban Feet</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/carrinho.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar (mesma do index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <!-- ... código da navbar ... -->
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-5 pt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Carrinho</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Conteúdo do Carrinho -->
+    <div class="container my-5">
+        <h1 class="mb-4">Seu Carrinho</h1>
+        
+        <div class="row">
+            <!-- Lista de Produtos -->
+            <div class="col-lg-8">
+                <div class="cart-items">
+                    <!-- Item do Carrinho -->
+                    <div class="cart-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-2">
+                                <img src="images/produto1.jpg" class="img-fluid rounded" alt="Produto">
+                            </div>
+                            <div class="col-md-4">
+                                <h5 class="product-title">Urban Classic</h5>
+                                <p class="product-size">Tamanho: 41</p>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="quantity-control">
+                                    <button class="btn btn-outline-dark btn-sm" onclick="updateQuantity(this, -1)">-</button>
+                                    <input type="number" class="form-control form-control-sm" value="1" min="1" max="10">
+                                    <button class="btn btn-outline-dark btn-sm" onclick="updateQuantity(this, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <p class="product-price">R$ 299,90</p>
+                            </div>
+                            <div class="col-md-2 text-end">
+                                <button class="btn btn-link text-danger" onclick="removeItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mais itens podem ser adicionados dinamicamente -->
+                </div>
+
+                <!-- Carrinho Vazio -->
+                <div class="empty-cart d-none">
+                    <div class="text-center py-5">
+                        <i class="fas fa-shopping-cart fa-3x mb-3 text-muted"></i>
+                        <h3>Seu carrinho está vazio</h3>
+                        <p class="text-muted">Adicione produtos para continuar comprando</p>
+                        <a href="index.html" class="btn btn-dark mt-3">Continuar Comprando</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumo do Pedido -->
+            <div class="col-lg-4">
+                <div class="order-summary">
+                    <h4 class="mb-4">Resumo do Pedido</h4>
+                    
+                    <div class="summary-item d-flex justify-content-between mb-2">
+                        <span>Subtotal</span>
+                        <span>R$ 299,90</span>
+                    </div>
+                    <div class="summary-item d-flex justify-content-between mb-2">
+                        <span>Frete</span>
+                        <span>Grátis</span>
+                    </div>
+                    <div class="summary-item d-flex justify-content-between mb-2">
+                        <span>Desconto</span>
+                        <span class="text-danger">-R$ 0,00</span>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="summary-item d-flex justify-content-between mb-4">
+                        <strong>Total</strong>
+                        <strong>R$ 299,90</strong>
+                    </div>
+
+                    <!-- Cupom de Desconto -->
+                    <div class="coupon-section mb-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Cupom de desconto">
+                            <button class="btn btn-outline-dark">Aplicar</button>
+                        </div>
+                    </div>
+
+                    <!-- Botão de Finalizar Compra -->
+                    <button class="btn btn-dark w-100 mb-3" onclick="proceedToCheckout()">
+                        Finalizar Compra
+                    </button>
+
+                    <!-- Formas de Pagamento -->
+                    <div class="payment-methods">
+                        <p class="mb-2">Formas de Pagamento:</p>
+                        <div class="d-flex gap-2">
+                            <i class="fab fa-cc-visa fa-2x"></i>
+                            <i class="fab fa-cc-mastercard fa-2x"></i>
+                            <i class="fab fa-cc-amex fa-2x"></i>
+                            <i class="fab fa-pix fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Produtos Recomendados -->
+    <section class="recommended-products py-5 bg-light">
+        <div class="container">
+            <h3 class="mb-4">Você Também Pode Gostar</h3>
+            <div class="row">
+                <!-- Cards de produtos recomendados -->
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="images/produto2.jpg" class="card-img-top" alt="Produto Recomendado">
+                        <div class="card-body">
+                            <h5 class="card-title">Urban Sport</h5>
+                            <p class="card-text">R$ 349,90</p>
+                            <a href="produto.html" class="btn btn-dark">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione mais cards conforme necessário -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (mesmo do index.html) -->
+    <footer class="bg-dark text-light py-4">
+        <!-- ... código do footer ... -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/carrinho.js"></script>
+</body>
+</html> 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/logoc.png" type="image/x-icon">
+    <title>Detalhes do Produto - Urban Feet</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/produto.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar (mesma do index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <img src="assets/logoc.png" alt="Logo Urban Feet" class="logo" style="width: 100px; height: 100px;">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-name">Urban Feet</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="carrinho.html" class="btn btn-outline-dark">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-5 pt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page" id="produto-nome">NIKE AIR FORCE 1 LOW (SUPREME WHITE)</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Detalhes do Produto -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Galeria de Imagens -->
+            <div class="col-md-6">
+                <div class="product-gallery">
+                    <div class="main-image mb-3">
+                        <img src="assets/NIKE AIR FORCE 1 LOW (SUPREME WHITE) 2.png" class="img-fluid" id="main-image" alt="Produto">
+                    </div>
+                    <div class="thumbnail-images d-flex gap-2">
+                        <img src="assets/NIKE AIR FORCE 1 LOW (SUPREME WHITE).png" class="thumbnail" alt="Foto Produto">
+                        <img src="assets/NIKE AIR FORCE 1 LOW (SUPREME WHITE) 2.png" class="thumbnail" alt="Foto Produto">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informações do Produto -->
+            <div class="col-md-6">
+                <h1 class="product-title mb-3">NIKE AIR FORCE 1 LOW (SUPREME WHITE)</h1>
+                <div class="product-price mb-4">
+                    <span class="current-price">195,00€</span>
+                </div>
+
+                <div class="product-description mb-4">
+                    <h5>Descrição</h5>
+                    <p>Sapatilha urbana com design moderno e confortável. Ideal para o dia a dia, 
+                    combina estilo e praticidade. Fabricada com materiais de alta qualidade e 
+                    tecnologia de amortecimento avançada.</p>
+                </div>
+
+                <!-- Seleção de Tamanho -->
+                <div class="size-selection mb-4">
+                    <h5>Tamanho</h5>
+                    <div class="size-buttons">
+                        <button class="btn btn-outline-dark size-btn">38</button>
+                        <button class="btn btn-outline-dark size-btn">39</button>
+                        <button class="btn btn-outline-dark size-btn">40</button>
+                        <button class="btn btn-outline-dark size-btn">41</button>
+                        <button class="btn btn-outline-dark size-btn">42</button>
+                        <button class="btn btn-outline-dark size-btn">43</button>
+                    </div>
+                </div>
+
+                <!-- Quantidade -->
+                <div class="quantity-selection mb-4">
+                    <h5>Quantidade</h5>
+                    <div class="input-group" style="width: 150px;">
+                        <button class="btn btn-outline-dark" type="button" id="decrease-qty">-</button>
+                        <input type="number" class="form-control text-center" value="1" min="1" id="quantity">
+                        <button class="btn btn-outline-dark" type="button" id="increase-qty">+</button>
+                    </div>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="action-buttons">
+                    <button class="btn btn-outline-dark btn-lg w-100 mb-3" id="add-to-cart">
+                        <i class="fas fa-shopping-cart me-2"></i>Adicionar ao Carrinho
+                    </button>
+                    <button class="btn btn-outline-dark btn-lg w-100 mb-3" id="add-to-cart">
+                        <i class="fas fa-shopping-cart me-2"></i>Comprar Agora
+                    </button>
+                    <button class="btn btn-outline-dark btn-lg w-100" id="add-to-wishlist">
+                        <i class="far fa-heart me-2"></i>Adicionar aos Favoritos
+                    </button>
+                </div>
+
+                <!-- Informações Adicionais -->
+                <div class="product-info mt-4">
+                    <div class="info-item">
+                        <i class="fas fa-truck me-2"></i>
+                        <span>Envio <b>Rapido e Gratis</b> para todo o território nacional</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-undo me-2"></i>
+                        <span>30 dias para troca</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        <span>Garantia de 90 dias</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer (mesmo do index.html) -->
+    <footer class="bg-dark text-light py-4">
+        <!-- ... código do footer ... -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/produto.js"></script>
+</body>
+</html> 
